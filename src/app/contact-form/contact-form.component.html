@@ -1,0 +1,20 @@
+<form>
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="firstName" type="text" class="form-control"
+            ngModel #firstName="ngModel" required minlength="5" maxlength="10" pattern="[A-Za-z]+$">
+    <div class="alert alert-danger" *ngIf="!firstName.valid && firstName.touched">
+      <div *ngIf="firstName.errors?.required">First name is required</div>
+      <div *ngIf="firstName.errors?.minlength">First name should be minimum {{firstName.errors?.minlength.requiredLength}} characters</div>
+      <div *ngIf="firstName.errors?.maxlength">First name should be maximum ten characters</div>
+      <div *ngIf="firstName.errors?.pattern">First name does not match the pattern</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea name="comment" ngModel #comment="ngModel" id="comment" class="form-control" cols="30" rows="10"></textarea>
+  </div>
+  <br/>
+  <button class="btn btn-primary">Submit</button>
+</form>

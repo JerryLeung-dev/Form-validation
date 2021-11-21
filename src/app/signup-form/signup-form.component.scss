@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+}
+
+#signup-form {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+#signup-form > .mat-form-field {
+  display:block;
+}
+
+::ng-deep mat-form-field .mat-form-field {
+  &-underline {
+    position: static;
+  }
+  &-subscript-wrapper {
+    position: static;
+  }
+}
